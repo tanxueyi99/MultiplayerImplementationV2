@@ -1,0 +1,289 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkpkqj7y7wfv7"]
+
+[ext_resource type="Script" path="res://Scripts/game_lobby_menu.gd" id="1_pdllv"]
+[ext_resource type="PackedScene" uid="uid://cfor5mxh0slq8" path="res://Scenes/player_info_label.tscn" id="1_w6ikc"]
+
+[sub_resource type="Theme" id="Theme_jbbfa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jilwi"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+shadow_color = Color(0, 0, 0, 0.839216)
+shadow_size = 100
+shadow_offset = Vector2(20, 20)
+
+[sub_resource type="Theme" id="Theme_t8lma"]
+
+[node name="GameLobbyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pdllv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridTopBar" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_right = 121.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 440
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Seperator2" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="Leave" type="Button" parent="Panel/GridTopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = " Leave "
+
+[node name="Seperator" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="Settings" type="Button" parent="Panel/GridTopBar"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = " Settings "
+
+[node name="Seperator5" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="Seperator7" type="Control" parent="Panel/GridTopBar"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -323.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.00205202
+
+[node name="Label" type="Label" parent="Panel/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Multiplayer
+Implementation
+
+Game Lobby Menu"
+
+[node name="VBoxTitle" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.5
+offset_right = 272.5
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="Panel/VBoxTitle"]
+layout_mode = 2
+
+[node name="WorldNameLabel" type="Label" parent="Panel/VBoxTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridTitlePlayerList" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = -144.0
+offset_right = 272.5
+offset_bottom = 29.0002
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="WorldNameLabel" type="Label" parent="Panel/GridTitlePlayerList"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = " Players "
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="WorldNameLabel2" type="Label" parent="Panel/GridTitlePlayerList"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "  Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerInfoScroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -104.0
+offset_right = 200.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jbbfa")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jilwi")
+follow_focus = true
+
+[node name="VBoxDisplayPlayer" type="VBoxContainer" parent="PlayerInfoScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = SubResource("Theme_t8lma")
+
+[node name="PlayerInfoLabel" parent="PlayerInfoScroll/VBoxDisplayPlayer" instance=ExtResource("1_w6ikc")]
+layout_mode = 2
+
+[node name="PlayerInfoLabel2" parent="PlayerInfoScroll/VBoxDisplayPlayer" instance=ExtResource("1_w6ikc")]
+layout_mode = 2
+
+[node name="PlayerInfoLabel3" parent="PlayerInfoScroll/VBoxDisplayPlayer" instance=ExtResource("1_w6ikc")]
+layout_mode = 2
+
+[node name="StartGameButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.5
+offset_top = -108.0
+offset_right = 46.5
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = " START GAME "
+
+[node name="PrintLogsPlayers" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -556.0
+offset_top = -419.0
+offset_right = -308.0
+offset_bottom = -369.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "PrintLogsPlayers"
+
+[node name="PrintLogs2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -556.0
+offset_top = -343.0
+offset_right = -308.0
+offset_bottom = -293.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Print Log2"
+
+[node name="PrintLogs3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -554.0
+offset_top = -484.0
+offset_right = -306.0
+offset_bottom = -434.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Print Log3"
+
+[node name="MessagingLineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -44.0
+offset_right = 264.0
+offset_bottom = -4.0
+grow_vertical = 0
+placeholder_text = "Type here to chat..."
+
+[node name="MessageBoxTextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -248.0
+offset_right = 264.0
+offset_bottom = -48.0
+grow_vertical = 0
+editable = false
+wrap_mode = 1
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/basic_player.tscn")
+spawn_path = NodePath(".")
+
+[node name="Level" type="Node" parent="."]
+
+[connection signal="pressed" from="Panel/GridTopBar/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="PrintLogsPlayers" to="." method="_on_print_logs_players_pressed"]
+[connection signal="pressed" from="PrintLogs2" to="." method="_on_print_logs_2_pressed"]
+[connection signal="pressed" from="PrintLogs3" to="." method="_on_print_logs_3_pressed"]
+[connection signal="text_submitted" from="MessagingLineEdit" to="." method="_on_messaging_line_edit_text_submitted"]

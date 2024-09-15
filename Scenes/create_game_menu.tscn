@@ -1,0 +1,223 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfek68toi4dq"]
+
+[ext_resource type="Script" path="res://Scripts/create_game_menu.gd" id="1_gt8kh"]
+
+[sub_resource type="Theme" id="Theme_u100f"]
+
+[node name="CreateGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gt8kh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_right = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxTitle" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxTitle"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Create Game Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridCreateGameInfo" type="GridContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/v_separation = 20
+
+[node name="GridGameInfo1" type="GridContainer" parent="Panel/MarginContainer/GridCreateGameInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="PlayerNameLabel" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Player Name:"
+
+[node name="PlayerName" type="LineEdit" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+max_length = 12
+
+[node name="WorldNameLabel" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "World Name:"
+
+[node name="WorldName" type="LineEdit" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+max_length = 12
+
+[node name="VBoxLanPlayInfo" type="VBoxContainer" parent="Panel/MarginContainer/GridCreateGameInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="WorldNameLabel2" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/VBoxLanPlayInfo"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Enable Lan Play?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Panel/MarginContainer/GridCreateGameInfo/VBoxLanPlayInfo"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_u100f")
+
+[node name="HBoxPortNumber" type="HBoxContainer" parent="Panel/MarginContainer/GridCreateGameInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PortNumberLabel" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/HBoxPortNumber"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Port Number:"
+horizontal_alignment = 1
+
+[node name="PortNumber" type="LineEdit" parent="Panel/MarginContainer/GridCreateGameInfo/HBoxPortNumber"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+placeholder_text = "7000"
+max_length = 5
+
+[node name="GridButton" type="GridContainer" parent="Panel/MarginContainer/GridCreateGameInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Seperator" type="Control" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  Back  "
+
+[node name="Create" type="Button" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  Create  "
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 380
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Multiplayer
+Implementation"
+
+[node name="ErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = 204.0
+offset_right = 89.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="PortErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 766.0
+offset_top = 45.0
+offset_right = 806.0
+offset_bottom = 87.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="NameErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 867.0
+offset_top = -175.0
+offset_right = 907.0
+offset_bottom = -133.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="WorldNameErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 867.0
+offset_top = -117.0
+offset_right = 907.0
+offset_bottom = -75.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[connection signal="text_changed" from="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1/PlayerName" to="." method="_on_player_name_text_changed"]
+[connection signal="text_changed" from="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1/WorldName" to="." method="_on_world_name_text_changed"]
+[connection signal="text_changed" from="Panel/MarginContainer/GridCreateGameInfo/HBoxPortNumber/PortNumber" to="." method="_on_port_number_text_changed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridCreateGameInfo/GridButton/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridCreateGameInfo/GridButton/Create" to="." method="_on_create_pressed"]

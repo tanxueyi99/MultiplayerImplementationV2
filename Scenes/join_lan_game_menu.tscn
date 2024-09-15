@@ -1,0 +1,182 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3jcbj1sjbce4"]
+
+[ext_resource type="Script" path="res://Scripts/join_lan_game_menu.gd" id="1_eri1t"]
+
+[node name="JoinLanGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eri1t")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_right = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxTitle" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxTitle"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Join Lan Game Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridCreateGameInfo" type="GridContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/v_separation = 20
+
+[node name="GridGameInfo1" type="GridContainer" parent="Panel/MarginContainer/GridCreateGameInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="PlayerNameLabel" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Player Name:"
+
+[node name="PlayerName" type="LineEdit" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Enter Player Name"
+max_length = 12
+
+[node name="IPAddressLabel" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "IP Address:"
+
+[node name="IPAddress" type="LineEdit" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+placeholder_text = "127.0.0.1"
+
+[node name="PortNumberLabel" type="Label" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Port Number"
+
+[node name="PortNumber" type="LineEdit" parent="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+placeholder_text = "7000"
+max_length = 5
+
+[node name="GridButton" type="GridContainer" parent="Panel/MarginContainer/GridCreateGameInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Seperator" type="Control" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  Back  "
+
+[node name="Join" type="Button" parent="Panel/MarginContainer/GridCreateGameInfo/GridButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  Join  "
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 380
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Multiplayer
+Implementation"
+
+[node name="ErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -121.0
+offset_right = 20.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="PortErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 886.0
+offset_top = -8.0
+offset_right = 926.0
+offset_bottom = 34.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="NameErrorMessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 886.0
+offset_top = -126.0
+offset_right = 926.0
+offset_bottom = -84.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[connection signal="text_change_rejected" from="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1/PlayerName" to="." method="_on_player_name_text_change_rejected"]
+[connection signal="text_changed" from="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1/PlayerName" to="." method="_on_player_name_text_changed"]
+[connection signal="text_change_rejected" from="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1/PortNumber" to="." method="_on_port_number_text_change_rejected"]
+[connection signal="text_changed" from="Panel/MarginContainer/GridCreateGameInfo/GridGameInfo1/PortNumber" to="." method="_on_port_number_text_changed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridCreateGameInfo/GridButton/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridCreateGameInfo/GridButton/Join" to="." method="_on_join_pressed"]
